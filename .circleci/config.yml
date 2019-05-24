@@ -3,7 +3,7 @@ orbs:
   gcp-gcr: circleci/gcp-gcr@0.3.0
   featurepeek: featurepeek/ping@dev:gcr
 workflows:
-  build_and_push_image:
+  build-and-deploy:
     jobs:
       - gcp-gcr/build_and_push_image:
           context: myContext

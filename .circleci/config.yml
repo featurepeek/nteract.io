@@ -6,7 +6,6 @@ workflows:
   build-and-push-image:
     jobs:
       - gcp-gcr/build-and-push-image:
-          context: myContext
           image: nteract
       - featurepeek/ping_featurepeek:
           requires:

@@ -10,6 +10,6 @@ workflows:
           image: nteract
       - featurepeek/ping_featurepeek:
           requires:
-            - gcp-gcr/build_and_push_image
+            - gcp-gcr/build-and-push-image
           image: nteract
           env: dev

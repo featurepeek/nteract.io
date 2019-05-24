@@ -1,16 +1,14 @@
 version: 2.1
 orbs:
-  aws-ecr: circleci/aws-ecr@0.0.2
-  featurepeek: featurepeek/ping@0.0.1
+  gcp-gcr: circleci/gcp-gcr@0.3.0
+  featurepeek: featurepeek/ping@dev:gcr
 workflows:
-  build-and-deploy:
+  build_and_push_image:
     jobs:
-      - aws-ecr/build_and_push_image:
-          account-url: "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
-          repo: "${AWS_RESOURCE_NAME_PREFIX}"
-          region: ${AWS_DEFAULT_REGION}
-          tag: "${CIRCLE_SHA1}"
+      - gcp-gcr/build_and_push_image:
+          image: nteract
       - featurepeek/ping_featurepeek:
           requires:
-            - aws-ecr/build_and_push_image
+            - gcp-gcr/build_and_push_image
+          image: nteract
           env: dev

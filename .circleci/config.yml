@@ -3,9 +3,9 @@ orbs:
   gcp-gcr: circleci/gcp-gcr@0.3.0
   featurepeek: featurepeek/ping@dev:gcr
 workflows:
-  build-and-deploy:
+  build-and-push-image:
     jobs:
-      - gcp-gcr/build_and_push_image:
+      - gcp-gcr/build-and-push-image:
           context: myContext
           image: nteract
       - featurepeek/ping_featurepeek:

@@ -1,0 +1,5 @@
+---
+services:
+- name: frontend
+  dockerfile: ./Dockerfile
+  port: 3000

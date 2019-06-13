@@ -13,7 +13,7 @@ yarn
 yarn dev
 ```
 
-The `yarn dev` command starts a server locally. Navigate to `localhost:8080` in
+The `yarn dev` command starts a server locally. Navigate to `localhost:3000` in
 your browser to view a development version of the site.
 
 ## Deployment
